@@ -124,6 +124,7 @@ header {
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   z-index: 100;
+  
 }
 
 header .container {
@@ -183,6 +184,7 @@ header.scrolled {
   border: 1px solid var(--border);
 
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  transition: width 0.4s ease;
 }
 
 
