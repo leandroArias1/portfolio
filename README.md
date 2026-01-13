@@ -46,7 +46,7 @@ src/
 ├─ main.jsx
 └─ index.css
 
-📬 Contact Form
+## 📬 Contact Form
 
 The contact form is powered by EmailJS, allowing messages to be sent directly to my email without the need for a backend server.
 
@@ -60,11 +60,11 @@ Add your keys as environment variables
 
 Update the EmailJS configuration in Contact.jsx
 
-🌍 Deployment
+## 🌍 Deployment
 
 The project is deployed using Vercel.
 
-Deployment steps:
+## Deployment steps:
 
 Push the repository to GitHub
 
@@ -74,7 +74,7 @@ Select Vite as the framework
 
 Build and deploy
 
-📌 About
+## 📌 About
 
 This portfolio is continuously evolving.
 New projects, improvements and refinements will be added over time as I grow as a developer.
