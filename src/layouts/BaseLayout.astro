@@ -1,0 +1,25 @@
+---
+import "../styles/globals.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Leandro Arias - Web Developer</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+          }
+        });
+      });
+
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>

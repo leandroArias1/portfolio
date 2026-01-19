@@ -1,0 +1,69 @@
+---
+import { skills } from "../../data/skills";
+
+// Iconos
+import Html5 from "../icons/Html.astro";
+import Css3 from "../icons/Css.astro";
+import Js from "../icons/Js.astro";
+import Ts from "../icons/Ts.astro";
+import ReactIcon from "../icons/React.astro";
+import Postman from "../icons/Postman.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import Express from "../icons/Express.astro";
+import AstroIcon from "../icons/Astro.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Node from "../icons/Node.astro";
+import Git from "../icons/Git.astro";
+import Github from "../icons/Github.astro";
+
+const ICONS = {
+  html: Html5,
+  css: Css3,
+  javascript: Js,
+  typescript: Ts,
+  react: ReactIcon,
+  express: Express,
+  postman: Postman,
+  postgresql: PostgreSQL,
+  astro: AstroIcon,
+  mongodb: MongoDB,
+  tailwindcss: Tailwind,
+  nodejs: Node,
+  git: Git,
+  github: Github,
+};
+---
+
+<section id="skills" class="py-24 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-12">
+      <h2 class="text-5xl font-heading tracking-tight text-text">Skills</h2>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        skills.map((group) => (
+          <div class="rounded-xl bg-bgSecondary border border-white/5 p-6">
+            <h3 class="text-lg font-semibold text-text mb-6">{group.title}</h3>
+
+            <div class="grid grid-cols-4 gap-4">
+              {group.skills.map((skill) => {
+                const Icon = ICONS[skill.icon];
+
+                return (
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-white/5 p-3 text-muted hover:text-accent hover:bg-white/10 transition"
+                    title={skill.name}
+                  >
+                    {Icon && <Icon />}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

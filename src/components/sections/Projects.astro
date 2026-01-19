@@ -1,0 +1,53 @@
+---
+import { projects } from "../../data/projects";
+import ProjectCard from "../ui/ProjectCard.astro";
+---
+
+
+
+<section id="projects" class="py-24 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <header class="mb-12">
+      <h2 class="text-5xl font-heading text-text tracking-tight">
+        Proyectos
+      </h2>
+      <p class="mt-4 text-muted max-w-xl">
+        Algunos proyectos donde apliqué diseño, performance y buenas prácticas de desarrollo.
+      </p>
+    </header>
+
+    <!-- CONTENEDOR EDITORIAL -->
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Dos arriba -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:min-h-[500px]">
+        <ProjectCard project={projects[0]} />
+        <ProjectCard project={projects[1]} />
+      </div>
+
+      <!-- Featured -->
+      <div class="mt-8">
+        <ProjectCard
+          project={projects[2]}
+          variant="horizontal"
+        />
+      </div>
+
+    </div>
+
+
+    <!-- CTA -->
+    <div class="mt-16 flex justify-center">
+      <a
+        href="https://github.com/leandroArias1"
+        target="_blank"
+        class="font-heading tracking-wide inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
+      >
+        Ver más proyectos
+        <span class="text-muted">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
