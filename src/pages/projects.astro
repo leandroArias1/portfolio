@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { extraProjects } from "../data/projects";
+---
+
+<BaseLayout>
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="mb-12">
+        <h1 class="text-5xl font-heading tracking-tight text-text">
+          Más proyectos
+        </h1>
+        <p class="mt-4 text-muted max-w-xl">
+          Otros proyectos y landings desarrollados.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {extraProjects.map((project) => (
+          <div
+            class="group rounded-xl bg-bgSecondary border border-white/5
+                   overflow-hidden hover:border-white/10 transition"
+          >
+            <!-- Imagen -->
+            <img
+              src={project.image}
+              alt={project.title}
+              class="h-48 w-full object-cover transition-transform duration-300
+                     group-hover:scale-105"
+            />
+
+            <!-- Contenido -->
+            <div class="p-5 flex flex-col gap-4">
+              <h3 class="text-lg font-semibold text-text">
+                {project.title}
+              </h3>
+
+              <p class="text-sm text-muted leading-relaxed">
+                {project.description}
+              </p>
+
+              <!-- Stack -->
+              <div class="flex flex-wrap gap-2">
+                {project.stack.map((tech) => (
+                  <span class="text-xs rounded-full bg-white/5 px-3 py-1 text-muted">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Links -->
+              <div class="flex gap-4 pt-4 text-sm">
+                {project.demo ? (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    class="text-accent hover:underline"
+                  >
+                    Demo
+                  </a>
+                ) : (
+                  <span class="text-muted/50 cursor-not-allowed">
+                    Demo
+                  </span>
+                )}
+
+                {project.repo ? (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    class="text-muted hover:text-text"
+                  >
+                    Código
+                  </a>
+                ) : (
+                  <span class="text-muted/50 cursor-not-allowed">
+                    Código
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Volver -->
+      <div class="mt-20">
+        <a
+          href="/#projects"
+          class="text-sm text-muted hover:text-text transition"
+        >
+          ← Volver a proyectos
+        </a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
