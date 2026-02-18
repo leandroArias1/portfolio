@@ -25,8 +25,8 @@ export const projects: Project[] = [
     description:
       "Plataforma e-commerce con catálogo, carrito y flujo de compra optimizado.",
     stack: ["Astro", "React", "Node.js", "Tailwind", "Stripe"],
-    image: "/projects/ecommerce.png",
-    demo: "https://e-commerce-livid-iota-93.vercel.app/",
+    image: "/projects/volt.png",
+    demo: "https://e-commerce-woad-beta-46.vercel.app",
     repo: "https://github.com/leandroArias1/e-commerce",
   },
   {
