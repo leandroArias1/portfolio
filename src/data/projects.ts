@@ -69,6 +69,16 @@ export const projects: Project[] = [
     demo: "https://fitgym-landing.vercel.app",
     repo: "https://github.com/leandroArias1/fitgym-landing",
   },
+  {
+    slug: "total-service-car",
+    title: "Total Service Car",
+    description:
+      "Aplicación web para gestionar servicios de automotores.",
+    stack: ["React", "Node.js", "Tailwind"],
+    image: "/projects/total-service-car.png",
+    demo: "https://sistema-stock-eta.vercel.app/login",
+    repo: "https://github.com/leandroArias1/sistema-stock",
+  },
 ];
 
 /**
@@ -78,5 +88,6 @@ export const extraProjects: Project[] = projects.filter(
   (project) =>
     project.slug === "landing-simple" ||
     project.slug === "estudio-contable" ||
-    project.slug === "fitgym-landing"
+    project.slug === "fitgym-landing" ||
+    project.slug === "total-service-car"
 );
