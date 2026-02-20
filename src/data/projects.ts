@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "Aplicación web para gestionar servicios de automotores.",
     stack: ["React", "Node.js", "Tailwind"],
     image: "/projects/total-service-car.png",
-    demo: "https://sistema-stock-eta.vercel.app/login",
+    demo: "https://sistema-stock-eta.vercel.app",
     repo: "https://github.com/leandroArias1/sistema-stock",
   },
 ];
