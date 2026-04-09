@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: 245 247 251;
+  --bg-secondary: 255 255 255;
+  --accent: 59 76 255;
+  --text: 11 15 26;
+  --muted: 101 114 138;
+}
+
+html.dark {
+  --bg: 2 6 23;
+  --bg-secondary: 15 23 42;
+  --accent: 59 130 246;
+  --text: 229 231 235;
+  --muted: 156 163 175;
+}
+
 
 
 html {
