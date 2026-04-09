@@ -43,8 +43,8 @@ const ICONS = {
 
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       {
-        skills.map((group) => (
-          <div class="rounded-xl bg-bgSecondary border border-white/5 p-6">
+        skills.map((group, groupIndex) => (
+          <div class={`rounded-xl bg-bgSecondary border border-black/5 dark:border-white/5 p-6 reveal ${groupIndex % 3 === 0 ? "reveal-delay-1" : groupIndex % 3 === 1 ? "reveal-delay-2" : "reveal-delay-3"}`}>
             <h3 class="text-lg font-semibold text-text mb-6">{group.title}</h3>
 
             <div class="grid grid-cols-4 gap-4">
@@ -53,7 +53,7 @@ const ICONS = {
 
                 return (
                   <div
-                    class="flex items-center justify-center rounded-lg bg-white/5 p-3 text-muted hover:text-accent hover:bg-white/10 transition"
+                    class="skill-card flex items-center justify-center rounded-lg bg-white/5 p-3 text-muted hover:text-accent hover:bg-white/10 transition border border-transparent"
                     title={skill.name}
                   >
                     {Icon && <Icon />}

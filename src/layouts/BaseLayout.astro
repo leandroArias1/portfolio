@@ -41,15 +41,18 @@ import "../styles/globals.css";
   <body>
     <slot />
     <script>
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
+            entry.target.classList.add("active");
           }
         });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px",
       });
 
-      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
