@@ -33,10 +33,17 @@ const navItems = [
       <button
         id="theme-toggle"
         type="button"
-        class="inline-flex items-center justify-center rounded-lg border border-black/10 bg-bgSecondary px-3 py-2 text-xs font-semibold text-text hover:-translate-y-0.5 dark:border-white/10"
+        class="inline-flex items-center gap-2 justify-center rounded-lg border border-black/10 bg-bgSecondary px-3 py-2 text-xs font-semibold text-text hover:-translate-y-0.5 dark:border-white/10"
         aria-label="Cambiar tema"
       >
-        <span id="theme-label">☀️ Light</span>
+        <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path>
+        </svg>
+        <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+        <span id="theme-label">Light</span>
       </button>
 
       <!-- CTA -->
@@ -55,10 +62,14 @@ const navItems = [
 <script>
   const toggle = document.getElementById("theme-toggle");
   const label = document.getElementById("theme-label");
+  const lightIcon = document.getElementById("theme-icon-light");
+  const darkIcon = document.getElementById("theme-icon-dark");
 
   const syncLabel = () => {
     const isDark = document.documentElement.classList.contains("dark");
-    if (label) label.textContent = isDark ? "🌙 Dark" : "☀️ Light";
+    if (label) label.textContent = isDark ? "Dark" : "Light";
+    lightIcon?.classList.toggle("hidden", isDark);
+    darkIcon?.classList.toggle("hidden", !isDark);
   };
 
   syncLabel();
