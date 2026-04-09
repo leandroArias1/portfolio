@@ -1,57 +1,93 @@
 
 <section id="contact" class="py-32 reveal">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
       <!-- Columna izquierda: texto -->
-      <div class="flex flex-col gap-6">
-        <h2 class="text-5xl font-heading tracking-tight text-text">
-          Contacto
+      <div class="flex flex-col gap-6 reveal reveal-delay-1">
+        <h2 class="text-5xl md:text-6xl font-heading tracking-tight text-text leading-[1.05]">
+          Construyamos algo
+          <span class="text-accent"> increíble.</span>
         </h2>
 
-        <p class="text-muted max-w-md leading-relaxed">
-          ¿Tenés un proyecto, una propuesta o simplemente querés hablar?
-          Completá el formulario y te respondo lo antes posible.
+        <p class="text-muted max-w-md leading-relaxed text-lg">
+          ¿Tenés un proyecto, una propuesta o querés sumar un perfil técnico a tu equipo? Hablemos.
         </p>
+
+        <div class="space-y-5 pt-4">
+          <div class="flex items-center gap-4">
+            <span class="h-11 w-11 rounded-xl bg-bgSecondary border border-black/10 dark:border-white/10 inline-flex items-center justify-center text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4 4 16 0 0 16-16 0zM22 6l-10 7L2 6"/>
+              </svg>
+            </span>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.25em] text-muted font-bold">Email</p>
+              <p class="text-text font-medium">leanahuelarias@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <span class="h-11 w-11 rounded-xl bg-bgSecondary border border-black/10 dark:border-white/10 inline-flex items-center justify-center text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10Z"/>
+                <circle cx="12" cy="11" r="2.5"/>
+              </svg>
+            </span>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.25em] text-muted font-bold">Base</p>
+              <p class="text-text font-medium">Argentina / Remoto</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Columna derecha: formulario -->
       <form
         id="contact-form"
-        class="bg-bgSecondary border border-white/5 rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-4"
+        class="bg-bgSecondary border border-black/5 dark:border-white/5 rounded-[2rem] p-8 md:p-10 grid grid-cols-1 gap-7 reveal reveal-delay-2 shadow-2xl shadow-black/5 dark:shadow-accent/10"
       >
-        <!-- Nombre -->
-        <input
-          type="text"
-          name="name"
-          placeholder="Tu nombre"
-          required
-          class="rounded-lg bg-bg border border-white/10 px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
-        />
+        <div class="space-y-2">
+          <label for="name" class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Nombre completo</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Tu nombre"
+            required
+            class="w-full bg-transparent border-b-2 border-black/10 dark:border-white/10 px-0 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent"
+          />
+        </div>
 
-        <!-- Mensaje -->
-        <textarea
-          name="message"
-          rows="4"
-          placeholder="Contame brevemente tu idea o propuesta"
-          required
-          class="md:row-span-2 rounded-lg bg-bg border border-white/10 px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-none"
-        ></textarea>
+        <div class="space-y-2">
+          <label for="email" class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Tu email"
+            required
+            class="w-full bg-transparent border-b-2 border-black/10 dark:border-white/10 px-0 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent"
+          />
+        </div>
 
-        <!-- Email -->
-        <input
-          type="email"
-          name="email"
-          placeholder="Tu email"
-          required
-          class="rounded-lg bg-bg border border-white/10 px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
-        />
+        <div class="space-y-2">
+          <label for="message" class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Detalles del proyecto</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            placeholder="Contame brevemente tu idea o propuesta"
+            required
+            class="w-full resize-none bg-transparent border-b-2 border-black/10 dark:border-white/10 px-0 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent"
+          ></textarea>
+        </div>
 
         <!-- Botón -->
-        <div class="md:col-span-2 flex justify-start pt-4">
+        <div class="flex justify-start pt-3">
           <button
             type="submit"
-            class="font-heading tracking-wide rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+            class="font-heading tracking-[0.18em] uppercase rounded-full bg-accent px-8 py-3 text-xs font-semibold text-white hover:opacity-90 transition shadow-lg shadow-accent/30"
           >
             Enviar mensaje
           </button>
@@ -60,7 +96,7 @@
         <!-- Estado del formulario -->
         <p
           id="form-status"
-          class="md:col-span-2 hidden text-sm text-accent pt-2"
+          class="hidden text-sm text-accent pt-2"
         >
           Mensaje enviado correctamente. Te voy a responder pronto 🙂
         </p>

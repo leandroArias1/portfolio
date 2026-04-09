@@ -11,17 +11,17 @@ const visibleProjects = projects.filter(
 <section id="projects" class="py-24 reveal">
   <div class="max-w-6xl mx-auto px-6">
 
-    <header class="mb-12">
-      <h2 class="text-5xl font-heading text-text tracking-tight">
-        Proyectos
+    <header class="mb-14 reveal reveal-delay-1">
+      <h2 class="text-5xl md:text-6xl font-heading text-text tracking-tight">
+        Selected Works
       </h2>
-      <p class="mt-4 text-muted max-w-xl">
-        Algunos proyectos donde apliqué diseño, performance y buenas prácticas de desarrollo.
+      <p class="mt-4 text-muted max-w-xl text-base">
+        Una selección de proyectos con foco en performance, arquitectura y experiencia de usuario.
       </p>
     </header>
 
     <!-- CONTENEDOR EDITORIAL -->
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-5xl mx-auto reveal reveal-delay-2">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:min-h-[500px]">
         {visibleProjects.map((project) => (
           <ProjectCard project={project} />
@@ -30,11 +30,12 @@ const visibleProjects = projects.filter(
     </div>
 
     <!-- CTA -->
-    <div class="mt-16 flex justify-center">
+    <div class="mt-16 flex justify-center reveal reveal-delay-3">
       <a
         href="/projects"
         target="_blank"
-        class="font-heading tracking-wide inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
+        rel="noopener noreferrer"
+        class="font-heading tracking-wide inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0 shadow-lg shadow-accent/20"
       >
         Ver más proyectos
         <span class="text-muted">→</span>
