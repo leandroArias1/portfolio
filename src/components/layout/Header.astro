@@ -8,8 +8,8 @@ const navItems = [
 
 ---
 
-<header id="site-header" class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-white/5 transition-all duration-500">
-  <div id="header-shell" class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between transition-all duration-500">
+<header id="site-header" class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-white/5">
+  <div id="header-shell" class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
     <!-- Marca -->
     <a href="#home" class="text-lg font-semibold tracking-tight">
@@ -18,7 +18,7 @@ const navItems = [
     </a>
 
     <!-- Navegación -->
-    <nav id="site-nav" class="hidden md:flex items-center gap-6 text-sm text-muted transition-all duration-500">
+    <nav id="site-nav" class="hidden md:flex items-center gap-6 text-sm text-muted">
       {navItems.map(item => (
         <a
           href={item.href}
@@ -30,7 +30,7 @@ const navItems = [
       ))}
     </nav>
 
-    <div id="header-actions" class="flex items-center gap-3 transition-all duration-500">
+    <div id="header-actions" class="flex items-center gap-3">
       <button
         id="theme-toggle"
         type="button"
@@ -60,10 +60,6 @@ const navItems = [
 </header>
 
 <script>
-  const header = document.getElementById("site-header");
-  const shell = document.getElementById("header-shell");
-  const nav = document.getElementById("site-nav");
-  const actions = document.getElementById("header-actions");
   const toggle = document.getElementById("theme-toggle");
   const lightIcon = document.getElementById("theme-icon-light");
   const darkIcon = document.getElementById("theme-icon-dark");
@@ -73,14 +69,6 @@ const navItems = [
     const isDark = document.documentElement.classList.contains("dark");
     lightIcon?.classList.toggle("hidden", isDark);
     darkIcon?.classList.toggle("hidden", !isDark);
-  };
-
-  const handleHeaderSide = () => {
-    const shouldSide = window.scrollY > 140;
-    header?.classList.toggle("is-side", shouldSide);
-    shell?.classList.toggle("is-side-shell", shouldSide);
-    nav?.classList.toggle("is-side-nav", shouldSide);
-    actions?.classList.toggle("is-side-actions", shouldSide);
   };
 
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -100,8 +88,6 @@ const navItems = [
   document.querySelectorAll("section[id]").forEach((section) => sectionObserver.observe(section));
 
   syncThemeIcons();
-  handleHeaderSide();
-  window.addEventListener("scroll", handleHeaderSide, { passive: true });
 
   toggle?.addEventListener("click", () => {
     const isDark = document.documentElement.classList.toggle("dark");
