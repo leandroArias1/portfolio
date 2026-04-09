@@ -211,13 +211,44 @@ h1, h2, h3, button, a {
   background: transparent;
 }
 
+@media (min-width: 768px) {
+  #site-header {
+    height: 84px;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  #header-shell {
+    position: fixed;
+    left: 50%;
+    top: 0.8rem;
+    transform: translateX(-50%);
+    width: min(1120px, calc(100% - 2rem));
+    border: 1px solid rgb(var(--text) / 0.08);
+    border-radius: 16px;
+    background: rgb(var(--bg-secondary) / 0.7);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 14px 40px -30px rgb(var(--text) / 0.35);
+    transition:
+      left 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      top 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      width 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      min-height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      padding 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-radius 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 420ms ease;
+  }
+}
+
 #header-shell.is-side-shell {
   position: fixed;
-  left: 1rem;
+  left: 1.1rem;
   top: 50%;
   transform: translateY(-50%);
-  min-height: 360px;
-  width: 210px;
+  min-height: 440px;
+  width: 160px;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.25rem;

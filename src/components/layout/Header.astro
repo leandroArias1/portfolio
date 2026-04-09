@@ -76,7 +76,7 @@ const navItems = [
   };
 
   const handleHeaderSide = () => {
-    const shouldSide = window.scrollY > 220;
+    const shouldSide = window.scrollY > 140;
     header?.classList.toggle("is-side", shouldSide);
     shell?.classList.toggle("is-side-shell", shouldSide);
     nav?.classList.toggle("is-side-nav", shouldSide);
