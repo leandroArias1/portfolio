@@ -39,6 +39,7 @@ import "../styles/globals.css";
 </head>
 
   <body>
+    <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-[2px] w-0 bg-accent"></div>
     <slot />
     <script>
       const observer = new IntersectionObserver((entries) => {
@@ -53,6 +54,17 @@ import "../styles/globals.css";
       });
 
       document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const progressBar = document.getElementById("scroll-progress");
+      const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+        if (progressBar) progressBar.style.width = `${progress}%`;
+      };
+
+      updateProgress();
+      window.addEventListener("scroll", updateProgress, { passive: true });
     </script>
   </body>
 </html>

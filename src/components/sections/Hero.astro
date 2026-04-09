@@ -3,8 +3,9 @@
 
 <section
   id="home"
-  class="min-h-screen flex items-center"
+  class="min-h-screen flex items-center hero-spotlight overflow-hidden"
 >
+  <div class="absolute inset-0 hero-grid pointer-events-none"></div>
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
     <!-- Texto -->
@@ -28,7 +29,7 @@
       <div class="mt-8 flex gap-4 reveal reveal-delay-3">
         <a
           href="#projects"
-          class="font-heading tracking-wide inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
+          class="btn-glow font-heading tracking-wide inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
         >
           Ver proyectos
         </a>
@@ -48,6 +49,10 @@
         <div class="absolute -inset-10 bg-accent/10 blur-3xl rounded-full opacity-60"></div>
         <div class="relative h-80 w-72 rounded-3xl overflow-hidden image-glow-container">
           <img src="/projects/foto-perfil.png" alt="Foto de perfil de Leandro Arias" class="h-full w-full object-cover hover:scale-105 transition-all duration-1000" />
+        </div>
+        <div class="absolute -bottom-6 -left-8 bg-bgSecondary/85 backdrop-blur rounded-2xl border border-black/10 dark:border-white/10 px-5 py-4 float-soft">
+          <p class="text-2xl font-bold font-heading text-accent">3+</p>
+          <p class="text-[10px] tracking-widest uppercase text-muted">Años creando<br />productos web</p>
         </div>
       </div>
     </div>

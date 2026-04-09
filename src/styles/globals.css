@@ -103,3 +103,70 @@ h1, h2, h3, button, a {
 .image-glow-container:hover::after {
   opacity: 1;
 }
+
+.hero-spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -8% -10% auto -10%;
+  height: 55%;
+  background: radial-gradient(circle at 25% 35%, rgb(var(--accent) / 0.22) 0%, transparent 62%);
+  filter: blur(36px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgb(var(--text) / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--text) / 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(circle at 40% 20%, black 20%, transparent 85%);
+}
+
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.card-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: linear-gradient(120deg, transparent 20%, rgb(var(--accent) / 0.09) 45%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.7s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-premium:hover::before {
+  transform: translateX(110%);
+  opacity: 1;
+}
+
+.btn-glow {
+  box-shadow: 0 10px 24px -12px rgb(var(--accent) / 0.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
