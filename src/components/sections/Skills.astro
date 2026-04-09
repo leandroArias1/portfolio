@@ -33,36 +33,41 @@ const ICONS = {
   git: Git,
   github: Github,
 };
+
+const coreSkills = [
+  "react",
+  "nodejs",
+  "postgresql",
+  "mongodb",
+  "astro",
+  "tailwindcss",
+] as const;
+
+const flatSkills = skills.flatMap((group) => group.skills);
+const visibleSkills = coreSkills
+  .map((iconName) => flatSkills.find((skill) => skill.icon === iconName))
+  .filter(Boolean);
 ---
 
 <section id="skills" class="py-24 reveal">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-12">
-      <h2 class="text-5xl font-heading tracking-tight text-text">Skills</h2>
+    <div class="mb-14 text-center reveal reveal-delay-1">
+      <p class="text-[10px] uppercase tracking-[0.35em] text-accent font-bold">Technical Arsenal</p>
+      <h2 class="mt-4 text-4xl md:text-5xl font-heading tracking-tight text-text">Core Competencies</h2>
     </div>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       {
-        skills.map((group, groupIndex) => (
-          <div class={`rounded-xl bg-bgSecondary border border-black/5 dark:border-white/5 p-6 reveal ${groupIndex % 3 === 0 ? "reveal-delay-1" : groupIndex % 3 === 1 ? "reveal-delay-2" : "reveal-delay-3"}`}>
-            <h3 class="text-lg font-semibold text-text mb-6">{group.title}</h3>
-
-            <div class="grid grid-cols-4 gap-4">
-              {group.skills.map((skill) => {
-                const Icon = ICONS[skill.icon];
-
-                return (
-                  <div
-                    class="skill-card flex items-center justify-center rounded-lg bg-white/5 p-3 text-muted hover:text-accent hover:bg-white/10 transition border border-transparent"
-                    title={skill.name}
-                  >
-                    {Icon && <Icon />}
-                  </div>
-                );
-              })}
+        visibleSkills.map((skill, index) => {
+          const Icon = skill ? ICONS[skill.icon] : null;
+          return (
+          <div class={`skill-card rounded-2xl bg-bgSecondary border border-black/5 dark:border-white/10 p-6 reveal ${index % 3 === 0 ? "reveal-delay-1" : index % 3 === 1 ? "reveal-delay-2" : "reveal-delay-3"}`}>
+            <div class="flex flex-col items-center justify-center gap-4">
+              <div class="text-accent">{Icon && <Icon />}</div>
+              <p class="text-[10px] tracking-[0.2em] font-bold text-muted uppercase text-center">{skill?.name}</p>
             </div>
           </div>
-        ))
+        )})
       }
     </div>
   </div>
